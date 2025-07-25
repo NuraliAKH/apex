@@ -1,0 +1,128 @@
+:root {
+  --bg: #f9f9f9;
+  --text: #111;
+  --sidebar-bg: #fff;
+  --topbar-bg: #fff;
+}
+
+[data-theme='dark'] {
+  --bg: #1e1e1e;
+  --text: #f9f9f9;
+  --sidebar-bg: #2a2a2a;
+  --topbar-bg: #2a2a2a;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.sidebar {
+  width: 100px;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.menuItem {
+  color: var(--text);
+  cursor: pointer;
+    
+}
+
+.themeToggle{
+  margin: 0 0 30px 0;
+  cursor: pointer;
+  color: var(--text);
+
+}
+
+.profile {
+  margin-top: auto;
+  font-size: 12px;
+  color: #aaa;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.main {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 80px;
+  background: var(--topbar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo {
+  margin: 30px;
+  color: var(--text);
+  border-bottom: #D9D9D9 2px solid;
+
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.icon {
+  margin: 15px 30px;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.lastMenuItem{
+  display: flex;
+  color: var(--text);
+  align-items: center;
+  font-size: 15px;
+}
+
+.lastIcon{
+  margin: 30px 5px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+.actions{
+  gap: 10px;
+}
+.actionButton {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-size: 18px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 16px;
+  background-color: #E5E8EE;
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
