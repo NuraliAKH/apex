@@ -8,21 +8,20 @@ const Topbar = () => {
       </div>
 
       <div className={styles.actions}>
-        <button className={styles.actionButton}>
-          <img src="/topbar/first.svg" alt="Оформить E-polis" />
-          Оформить E-polis
+        <button>
+          <img src="/topbar/first.svg" alt="" />
         </button>
         <button className={styles.actionButton}>
           <img src="/topbar/sec.svg" alt="show" />
-          |
-          <img src="th" alt="Такафул" />
           Такафул
         </button>
-        <button className={styles.actionButton}>RU</button>
         <button className={styles.actionButton}>
-          <img src="four" alt="1188" />
+          <img src="/topbar/th.svg" alt="" /> | RU
+        </button>
+        <button className={styles.actionButton}>
+          <img src="/topbar/four.svg" alt="1188" />
           1188 |
-          <img src="five" alt="Поддержка" />
+          <img src="/topbar/five.svg" alt="Поддержка" />
           Поддержка
         </button>
       </div>
