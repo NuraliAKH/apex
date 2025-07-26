@@ -1,7 +1,4 @@
 import styles from "./layout.module.css";
-import { FaPhone, FaFileAlt, FaEye } from "react-icons/fa";
-import { MdSupportAgent } from "react-icons/md";
-import { GiGoldBar } from "react-icons/gi";
 
 const Topbar = () => {
   return (
@@ -12,19 +9,20 @@ const Topbar = () => {
 
       <div className={styles.actions}>
         <button className={styles.actionButton}>
-          <FaFileAlt />
+          <img src="/topbar/first.svg" alt="Оформить E-polis" />
           Оформить E-polis
         </button>
         <button className={styles.actionButton}>
-          <FaEye /> |
-          <GiGoldBar />
+          <img src="/topbar/sec.svg" alt="show" />
+          |
+          <img src="th" alt="Такафул" />
           Такафул
         </button>
         <button className={styles.actionButton}>RU</button>
         <button className={styles.actionButton}>
-          <FaPhone />
+          <img src="four" alt="1188" />
           1188 |
-          <MdSupportAgent />
+          <img src="five" alt="Поддержка" />
           Поддержка
         </button>
       </div>
