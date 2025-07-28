@@ -2,8 +2,7 @@ import React from "react";
 
 const ApexAboutContainer: React.FC = () => {
   return (
-    <div style={{ display: "flex", gap: 24, fontFamily: "sans-serif", paddingTop: 24 }}>
-      {/* Левая колонка: О компании */}
+    <div style={{ display: "flex", gap: 24, fontFamily: "sans-serif", padding: "24px 0" }}>
       <div style={{ flex: 1 }}>
         <h3 style={{ marginBottom: 12, color: "#111" }}>
           О компании <strong>APEX INSURANCE</strong>
