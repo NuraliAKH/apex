@@ -1,11 +1,15 @@
-import BackgroundContainer from "../features/home/containers/MainContainer";
+import ApexAboutContainer from "../features/home/containers/AboutContainer";
+import { HeroSlider } from "../features/home/containers/MainContainer";
+import { NewsContainer } from "../features/home/containers/NewsContainer";
 import ProductRecommendationsContainer from "../features/home/containers/RecomendedProducts";
 
 const HomePage = () => {
   return (
     <div>
-      <BackgroundContainer />
+      <HeroSlider />
       <ProductRecommendationsContainer />
+      <ApexAboutContainer />
+      <NewsContainer />
     </div>
   );
 };

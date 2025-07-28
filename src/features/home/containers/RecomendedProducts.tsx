@@ -1,19 +1,21 @@
 import React from "react";
 import RecomendedProductCard from "../components/RecomendedProductCard";
 import { mockCards } from "../data/Recomended";
+import CustomSwitch from "../../../components/CustomSwitch";
 
 interface Props {}
 
 const ProductRecommendationsContainer: React.FC<Props> = () => {
+  const [isPrivate, setIsPrivate] = React.useState(false);
   return (
-    <div style={{ padding: 24, fontFamily: "sans-serif" }}>
-      {/* Header */}
+    <div style={{ paddingTop: 24, fontFamily: "sans-serif" }}>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: 20,
+          height: "100%",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -22,21 +24,13 @@ const ProductRecommendationsContainer: React.FC<Props> = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              backgroundColor: "#e8e8e8",
               borderRadius: 20,
               padding: "4px 10px",
               fontSize: 14,
             }}
           >
             <span style={{ marginRight: 8 }}>Частным лицам</span>
-            <div
-              style={{
-                width: 28,
-                height: 16,
-                borderRadius: 8,
-                backgroundColor: true ? "#0077cc" : "#aaa",
-              }}
-            />
+            <CustomSwitch onChange={setIsPrivate} value={isPrivate} />
           </div>
         </div>
         <button
@@ -46,6 +40,7 @@ const ProductRecommendationsContainer: React.FC<Props> = () => {
             color: "#0077cc",
             fontSize: 14,
             cursor: "pointer",
+            paddingRight: 16,
           }}
         >
           Все продукты →
@@ -58,6 +53,7 @@ const ProductRecommendationsContainer: React.FC<Props> = () => {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
           gap: 16,
+          alignItems: "stretch",
         }}
       >
         {mockCards.map((card, index) => (

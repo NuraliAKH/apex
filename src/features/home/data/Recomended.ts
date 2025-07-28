@@ -9,7 +9,7 @@ export const mockCards: TouristInsuranceCardData[] = [
     leftButton: "Оформить полис",
     rightButton: "Подробнее",
     iconUserUrl: "/icons/user.outline.svg",
-    iconTypeUrl: "https://www.svgrepo.com/show/532506/luggage.svg",
+    iconTypeUrl: "/recomended/recomended.svg",
   },
   {
     imageUrl: "https://static.review.uz/crop/2/8/825__95_288900871.jpg?v=1608013867", // авария
@@ -19,17 +19,17 @@ export const mockCards: TouristInsuranceCardData[] = [
     leftButton: "Оформить полис",
     rightButton: "Подробнее",
     iconUserUrl: "/icons/user.outline.svg",
-    iconTypeUrl: "https://www.svgrepo.com/show/502324/warning.svg",
+    iconTypeUrl: "/recomended/recomended.svg",
   },
   {
     imageUrl: "https://kapitalsugurta.uz/uploads/insurance-products/banner-8.jpg", // врачи
-    title: "Инфекционные заболевания",
+    title: "Страхование на случай инфекционного заболевания",
     subtitle: "Медицинская защита",
     description: "Полис на случай заражения вирусами и госпитализации.",
     leftButton: "Оформить полис",
     rightButton: "Подробнее",
     iconUserUrl: "/icons/user.outline.svg",
-    iconTypeUrl: "https://cdn-icons-png.flaticon.com/512/535/535239.png",
+    iconTypeUrl: "/recomended/recomended.svg",
   },
   {
     imageUrl: "https://static.review.uz/crop/2/8/825__95_288900871.jpg?v=1608013867", // спорт
@@ -39,6 +39,6 @@ export const mockCards: TouristInsuranceCardData[] = [
     leftButton: "Оформить полис",
     rightButton: "Подробнее",
     iconUserUrl: "/icons/user.outline.svg",
-    iconTypeUrl: "https://cdn-icons-png.flaticon.com/512/535/535239.png",
+    iconTypeUrl: "/recomended/recomended.svg",
   },
 ];
