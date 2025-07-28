@@ -18,7 +18,7 @@ const RecomendedProductCard: React.FC<Props> = ({ data }) => {
   return (
     <div
       style={{
-        width: 300,
+        width: 340,
         borderRadius: 16,
         height: "100%",
         overflow: "hidden",

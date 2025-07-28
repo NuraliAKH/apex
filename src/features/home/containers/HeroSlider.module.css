@@ -1,13 +1,13 @@
 .sliderWrapper {
   border-radius: 16px;
-  width: 1250px;
+  width: 1400px;
 
   overflow: hidden;
   position: relative;
 }
 
 .slide {
-  width: 1250px;
+  width: 1400;
   height: 400px;
   background-size: cover;
   background-position: center;
