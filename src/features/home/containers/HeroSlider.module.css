@@ -1,0 +1,82 @@
+.sliderWrapper {
+  border-radius: 16px;
+  width: 1250px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  width: 1250px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+  z-index: 1;
+}
+
+
+.content {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #ffffffcc;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-pagination-bullets {
+  bottom: 16px !important;
+  right: 16px !important;
+  left: auto !important;
+}
+
+.swiper-pagination-bullet {
+  background: #d9d9d9;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0057b8;
+}

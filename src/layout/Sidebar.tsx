@@ -1,6 +1,7 @@
 import styles from "./layout.module.css";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import React from "react";
 
 const Sidebar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -28,14 +29,17 @@ const Sidebar = () => {
 
       <div className={styles.menu}>
         {items.map(({ icon, label, to }, idx) => (
-          <NavLink
-            key={idx}
-            to={to}
-            className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ""}`}
-          >
-            <img src={icon} alt={label} className={styles.icon} />
-          </NavLink>
+          <React.Fragment key={idx}>
+            <NavLink to={to} className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ""}`}>
+              <img src={icon} alt={label} className={styles.icon} />
+            </NavLink>
+
+            {/* Горизонтальная линия — только если это не последний элемент */}
+            {idx < items.length - 1 && <div className={styles.iconDivider} />}
+          </React.Fragment>
         ))}
+
+        {/* Последний элемент — без разделителя */}
         <NavLink to={"/profile"} className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ""}`}>
           <div className={styles.lastMenuItem}>
             <img src={"/icons/exit.icon.svg"} alt="Личный Кабинет" className={styles.lastIcon} />

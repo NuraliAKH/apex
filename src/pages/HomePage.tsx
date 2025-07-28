@@ -1,10 +1,10 @@
-import BackgroundContainer from "../features/home/containers/MainContainer";
+import { HeroSlider } from "../features/home/containers/MainContainer";
 import ProductRecommendationsContainer from "../features/home/containers/RecomendedProducts";
 
 const HomePage = () => {
   return (
     <div>
-      <BackgroundContainer />
+      <HeroSlider />
       <ProductRecommendationsContainer />
     </div>
   );
