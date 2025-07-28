@@ -1,8 +1,8 @@
 :root {
-  --bg: #fff;
+  --bg: #F7F7F7;
   --text: #111;
-  --sidebar-bg: #fff;
-  --topbar-bg: #fff;
+  --sidebar-bg: #F7F7F7;
+  --topbar-bg: #F7F7F7;
 }
 
 [data-theme='dark'] {

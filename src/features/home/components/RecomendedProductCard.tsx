@@ -20,17 +20,28 @@ const RecomendedProductCard: React.FC<Props> = ({ data }) => {
       style={{
         width: 300,
         borderRadius: 16,
-        border: "1px solid #e0e0e0",
+        height: "100%",
         overflow: "hidden",
-        boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
         fontFamily: "sans-serif",
-        backgroundColor: "#fff",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {/* Top image */}
-      <div style={{ position: "relative" }}>
-        <img src={data.imageUrl} alt="preview" style={{ width: "100%", height: 160, objectFit: "cover" }} />
-        {/* Top-right icon */}
+      <div style={{ position: "relative", margin: 0 }}>
+        <img
+          src={data.imageUrl}
+          alt="preview"
+          style={{
+            borderRadius: 16,
+            width: "100%",
+            height: 160,
+            objectFit: "cover",
+            borderTopLeftRadius: 16,
+            borderTopRightRadius: 16,
+            display: "block",
+          }}
+        />
         {data.iconUserUrl && (
           <img
             src={data.iconUserUrl}
@@ -41,7 +52,7 @@ const RecomendedProductCard: React.FC<Props> = ({ data }) => {
               right: 12,
               width: 28,
               height: 28,
-              borderRadius: "50%",
+              borderRadius: 4,
               backgroundColor: "#fff",
               padding: 4,
             }}
@@ -50,21 +61,56 @@ const RecomendedProductCard: React.FC<Props> = ({ data }) => {
       </div>
 
       {/* Text content */}
-      <div style={{ padding: "16px" }}>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          padding: 16,
+          borderRadius: 16,
+          backgroundColor: "#fff",
+        }}
+      >
         <h3 style={{ margin: 0, fontSize: 18 }}>{data.title}</h3>
         <p style={{ margin: "4px 0", fontSize: 14, color: "#0077cc" }}>{data.subtitle}</p>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+          }}
+        >
           <p style={{ fontSize: 13, color: "#555", flex: 1, marginTop: 8 }}>{data.description}</p>
           {data.iconTypeUrl && (
-            <img src={data.iconTypeUrl} alt="icon" style={{ width: 18, height: 18, marginLeft: 8, marginTop: 8 }} />
+            <img
+              src={data.iconTypeUrl}
+              alt="icon"
+              style={{
+                width: 18,
+                height: 18,
+                marginLeft: 8,
+                marginTop: 8,
+              }}
+            />
           )}
         </div>
 
-        {/* Divider */}
-        <hr style={{ margin: "16px 0", border: "none", borderTop: "1px solid #eee" }} />
+        <hr
+          style={{
+            margin: "16px 0 12px",
+            border: "none",
+            borderTop: "1px solid #eee",
+          }}
+        />
 
-        {/* Buttons */}
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        {/* Push buttons to the bottom */}
+        <div
+          style={{
+            marginTop: "auto",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           <button
             style={{
               background: "transparent",
