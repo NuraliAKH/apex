@@ -10,9 +10,9 @@ const Sidebar = () => {
     { label: "Главная", icon: "/icons/room.outline.svg", to: "/" },
     { label: "Пользователи", icon: "/icons/user.outline.svg", to: "/users" },
     { label: "Настройки", icon: "/icons/briefcase.outline.svg", to: "/settings" },
-    { label: "Новости", icon: "/icons/feed.outline.svg", to: "/settings" },
-    { label: "Другие", icon: "/icons/apps.outline.svg", to: "/profile" },
-    { label: "Поиск", icon: "/icons/search.outline.svg", to: "/help" },
+    { label: "Новости", icon: "/icons/feed.outline.svg", to: "/news" },
+    { label: "Другие", icon: "/icons/apps.outline.svg", to: "/profile", hideOnMobile: true },
+    { label: "Поиск", icon: "/icons/search.outline.svg", to: "/help", hideOnMobile: true },
   ];
 
   return (
@@ -28,24 +28,20 @@ const Sidebar = () => {
       </div>
 
       <div className={styles.menu}>
-        {items.map(({ icon, label, to }, idx) => (
+        {items.map(({ icon, label, to, hideOnMobile }, idx) => (
           <React.Fragment key={idx}>
-            <NavLink to={to} className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ""}`}>
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                `${styles.menuItem} ${isActive ? styles.active : ""} ${hideOnMobile ? styles.hideMobile : ""}`
+              }
+            >
               <img src={icon} alt={label} className={styles.icon} />
             </NavLink>
 
-            {/* Горизонтальная линия — только если это не последний элемент */}
-            {idx < items.length - 1 && <div className={styles.iconDivider} />}
+            {idx < items.length - 1 && !hideOnMobile && <div className={styles.iconDivider} />}
           </React.Fragment>
         ))}
-
-        {/* Последний элемент — без разделителя */}
-        <NavLink to={"/profile"} className={({ isActive }) => `${styles.menuItem} ${isActive ? styles.active : ""}`}>
-          <div className={styles.lastMenuItem}>
-            <img src={"/icons/exit.icon.svg"} alt="Личный Кабинет" className={styles.lastIcon} />
-            <span className={styles.menuLabel}>Личный Кабинет</span>
-          </div>
-        </NavLink>
       </div>
     </aside>
   );
