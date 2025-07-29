@@ -76,3 +76,9 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+@media (max-width: 480px) {
+  .news-card {
+    width: 100%;
+  }
+}
