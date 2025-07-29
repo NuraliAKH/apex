@@ -2,64 +2,57 @@ import React from "react";
 import RecomendedProductCard from "../components/RecomendedProductCard";
 import { mockCards } from "../data/Recomended";
 import CustomSwitch from "../../../components/CustomSwitch";
+import styles from "./ProductRecommendationsContainer.module.css";
 
-interface Props {}
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 
-const ProductRecommendationsContainer: React.FC<Props> = () => {
+import { useMediaQuery } from "react-responsive";
+
+const ProductRecommendationsContainer: React.FC = () => {
   const [isPrivate, setIsPrivate] = React.useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 479 });
+
   return (
-    <div style={{ paddingTop: 24, fontFamily: "sans-serif" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 20,
-          height: "100%",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.titleBlock}>
           <h2 style={{ margin: 0, fontSize: 18 }}>Рекомендуемые продукты</h2>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              borderRadius: 20,
-              padding: "4px 10px",
-              fontSize: 14,
-            }}
-          >
+          <div className={styles.switchContainer}>
             <span style={{ marginRight: 8 }}>Частным лицам</span>
             <CustomSwitch onChange={setIsPrivate} value={isPrivate} />
           </div>
+          <button className={styles.linkButton}>Все продукты →</button>
         </div>
-        <button
-          style={{
-            background: "transparent",
-            border: "none",
-            color: "#0077cc",
-            fontSize: 14,
-            cursor: "pointer",
-            paddingRight: 16,
-          }}
-        >
-          Все продукты →
-        </button>
       </div>
 
-      {/* Cards Grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: 16,
-          alignItems: "stretch",
-        }}
-      >
-        {mockCards.map((card, index) => (
-          <RecomendedProductCard key={index} data={card} />
-        ))}
-      </div>
+      {isMobile ? (
+        <Swiper
+          modules={[Pagination]}
+          slidesPerView={1}
+          spaceBetween={12}
+          pagination={{ clickable: true }}
+          style={{ paddingBottom: 24 }}
+          observer={true}
+          observeParents={true}
+        >
+          {mockCards.map((card, index) => (
+            <SwiperSlide key={index}>
+              <div className={styles.cardWrapper}>
+                <RecomendedProductCard data={card} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className={styles.cardsGrid}>
+          {mockCards.map((card, index) => (
+            <RecomendedProductCard key={index} data={card} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

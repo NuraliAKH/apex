@@ -1,5 +1,5 @@
 import React from "react";
-
+import styles from "../containers/ProductRecommendationsContainer.module.css";
 interface Props {
   data: TouristInsuranceCardData;
 }
@@ -16,17 +16,7 @@ export interface TouristInsuranceCardData {
 
 const RecomendedProductCard: React.FC<Props> = ({ data }) => {
   return (
-    <div
-      style={{
-        width: 340,
-        borderRadius: 16,
-        height: "100%",
-        overflow: "hidden",
-        fontFamily: "sans-serif",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div className={styles.card}>
       {/* Top image */}
       <div style={{ position: "relative", margin: 0 }}>
         <img
